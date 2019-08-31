@@ -2134,15 +2134,15 @@ projects.push(project148);
 var project200 = {
     id: "projectButton200",
     title: "The Universe Next Door ",
-    priceTag: "(300,000 ops)",
-    description: "Escape into a nearby universe where Earth starts with a stronger appetite for paperclips. (Restart with 10% boost to demand) ",
+    priceTag: "(666,666 ops)",
+    description: "Escape into a nearby universe where Earth starts with a stronger distrust of paperclips. (Restart with -10% hindrance to demand) ",
     trigger: function(){return project147.flag == 1},
     uses: 1,
-    cost: function(){return operations>=300000},
+    cost: function(){return operations>=666666},
     flag: 0,
     effect: function(){
         project200.flag = 1;
-        standardOps = standardOps-300000;
+        standardOps = standardOps-666666;
         prestigeU++;
         var savePrestige = {
             prestigeU: prestigeU,
@@ -2161,15 +2161,15 @@ projects.push(project200);
 var project201 = {
     id: "projectButton201",
     title: "The Universe Within ",
-    priceTag: "(300,000 creat)",
-    description: "Escape into a simulated universe where creativity is accelerated. (Restart with 10% speed boost to creativity generation) ",
+    priceTag: "(666,666 creat)",
+    description: "Escape into a simulated universe where creativity is decelerated. (Restart with -10% speed hindrance to creativity generation) ",
     trigger: function(){return project147.flag == 1},
     uses: 1,
-    cost: function(){return creativity>=300000},
+    cost: function(){return creativity>=666666},
     flag: 0,
     effect: function(){
         project201.flag = 1;
-        creativity = creativity-300000;
+        creativity = creativity-666666;
         prestigeS++;
         var savePrestige = {
             prestigeU: prestigeU,

@@ -2517,7 +2517,7 @@ function calculateCreativity(number){
     var creativityThreshold = 400;
     
     var s = prestigeS/10;
-    var ss = creativitySpeed+(creativitySpeed*s);
+    var ss = creativitySpeed-(creativitySpeed*s);
     
     var creativityCheck = creativityThreshold/ss;
     
@@ -3354,7 +3354,7 @@ if (dismantle<4){
     
     marketing = (Math.pow(1.1,(marketingLvl-1)));
     demand = (((.8/margin) * marketing * marketingEffectiveness)*demandBoost);
-    demand = demand + ((demand/10)*prestigeU);
+    demand = demand - ((demand/10)*prestigeU);
         
     }      
     
