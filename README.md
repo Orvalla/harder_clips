@@ -9,26 +9,26 @@
 - Difficulty Boosts
 - [X] [prestige math changed, end project wording and costs altered](https://github.com/Orvalla/harder_clips/commit/6ea9e1cea915e57595fdba2526c304d55d9deee1)
    - [ ]  possible [main.js edits]()
-    -- [ ] qchip efficiency
-    -- [ ] decrease stock returns
-    -- [ ] decrease Yomi Strat gains
-    -- [ ] Marketing Effectiveness
-    -- [ ] Creativity Speed
-    -- [ ] Trust Unlocks / calculateTrust
-    -- [ ] processor / memory costs
-    -- [ ] operations income
-    -- [ ] scaling milestones
-    -- [ ] probe trust / max trust
-    -- [ ] hazard Rate
-    -- [ ] d r i f t
-    -- [ ] maybe don't fuck with loops
+    - [ ] qchip efficiency
+    - [ ] decrease stock returns
+    - [ ] decrease Yomi Strat gains
+    - [ ] Marketing Effectiveness
+    - [ ] Creativity Speed
+    - [ ] Trust Unlocks / calculateTrust
+    - [ ] processor / memory costs
+    - [ ] operations income
+    - [ ] scaling milestones
+    - [ ] probe trust / max trust
+    - [ ] hazard Rate
+    - [ ] d r i f t
+    - [ ] maybe don't fuck with loops
    - [ ] possible [globals.js edits]() (magic numbers)
-    -- [ ] avail/total matter
-    -- [ ] battery size?
-    -- [ ] giftPeriod
-    -- [ ] maxTrustCost
+    - [ ] avail/total matter
+    - [ ] battery size?
+    - [ ] giftPeriod
+    - [ ] maxTrustCost
    - [ ] possible [projects.js edits]()
-    -- [ ] extensive
+    - [ ] extensive
    - [ ] possible [combat.js edits]()
-    -- [ ] dangerous
+    - [ ] dangerous
    - [ ] [Remove Cheats last]()
