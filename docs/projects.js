@@ -726,30 +726,30 @@ var project35 = {
         megaClipperLevel = 0;
         nanoWire = wire;
         humanFlag = 0;
-        
+
         if (document.getElementById("projectButton219") != null){
         var element = document.getElementById("projectButton219");
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project219);
         activeProjects.splice(index, 1);
-        } 
-        
+        }
+
         if (document.getElementById("projectButton40b") != null){
         var element = document.getElementById("projectButton40b");
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project40b);
         activeProjects.splice(index, 1);
-        }   
-        
+        }
+
         hypnoDroneEvent();
-        
+
         document.getElementById("transWire").innerHTML = wire;
 
         var element = document.getElementById("projectButton35");
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project35);
         activeProjects.splice(index, 1);
-        
+
     }
 }
 
@@ -1137,7 +1137,7 @@ var project46 = {
         farmLevel = 1;
         powMod = 1;
         var element = document.getElementById("projectButton46");
-        document.getElementById('probeCostDisplay').innerHTML = numberCruncher(probeCost); 
+        document.getElementById('probeCostDisplay').innerHTML = numberCruncher(probeCost);
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project46);
         activeProjects.splice(index, 1);
@@ -1305,7 +1305,7 @@ var project63 = {
     effect: function(){
         project63.flag = 1;
         standardOps = standardOps-22500;
-        allStrats[4].active = 1;        
+        allStrats[4].active = 1;
         strats.push(stratGenerous);
         displayMessage("GENEROUS added to strategy pool");
         tourneyCost = tourneyCost + 1000;
@@ -1336,7 +1336,7 @@ var project64 = {
     effect: function(){
         project64.flag = 1;
         standardOps = standardOps-25000;
-        allStrats[5].active = 1;        
+        allStrats[5].active = 1;
         strats.push(stratMinimax);
         displayMessage("MINIMAX added to strategy pool");
         tourneyCost = tourneyCost + 1000;
@@ -1367,7 +1367,7 @@ var project65 = {
     effect: function(){
         project65.flag = 1;
         standardOps = standardOps-30000;
-        allStrats[6].active = 1;        
+        allStrats[6].active = 1;
         strats.push(stratTitfortat);
         displayMessage("TIT FOR TAT added to strategy pool");
         tourneyCost = tourneyCost + 1000;
@@ -1398,7 +1398,7 @@ var project66 = {
     effect: function(){
         project66.flag = 1;
         standardOps = standardOps-32500;
-        allStrats[7].active = 1;        
+        allStrats[7].active = 1;
         strats.push(stratBeatlast);
         displayMessage("BEAT LAST added to strategy pool");
         tourneyCost = tourneyCost + 1000;
@@ -1846,7 +1846,7 @@ projects.push(project132);
 
 var project133 = {
     id: "projectButton133",
-    title: "Threnody for the Heroes of "+threnodyTitle+" ",  
+    title: "Threnody for the Heroes of "+threnodyTitle+" ",
     priceTag: "(" + threnodyCost.toLocaleString() + " creat, " + (threnodyCost/10).toLocaleString() + " yomi)",
     description: "Gain 10,000 honor  ",
     trigger: function(){return project121.flag == 1 && probeUsedTrust == maxTrust},
@@ -2144,6 +2144,9 @@ var project200 = {
         project200.flag = 1;
         standardOps = standardOps-666666;
         prestigeU++;
+        if(prestigeU>=10){
+          chooseEffect();
+        }
         var savePrestige = {
             prestigeU: prestigeU,
             prestigeS: prestigeS,
@@ -2151,7 +2154,7 @@ var project200 = {
         localStorage.setItem("savePrestige",JSON.stringify(savePrestige));
         displayMessage("Entering New Universe.");
         reset();
-        
+
     }
 }
 
@@ -2171,6 +2174,9 @@ var project201 = {
         project201.flag = 1;
         creativity = creativity-666666;
         prestigeS++;
+        if(prestigeS>=10){
+          chooseEffect();
+        }
         var savePrestige = {
             prestigeU: prestigeU,
             prestigeS: prestigeS,
@@ -2178,7 +2184,7 @@ var project201 = {
         localStorage.setItem("savePrestige",JSON.stringify(savePrestige));
         displayMessage("Entering Simulated Universe.");
         reset();
-        
+
     }
 }
 
@@ -2207,7 +2213,7 @@ var project210 = {
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project210);
         activeProjects.splice(index, 1);
-        
+
     }
 }
 
@@ -2235,7 +2241,7 @@ var project211 = {
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project211);
         activeProjects.splice(index, 1);
-        
+
     }
 }
 
@@ -2262,7 +2268,7 @@ var project212 = {
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project212);
         activeProjects.splice(index, 1);
-        
+
     }
 }
 
@@ -2289,7 +2295,7 @@ var project213 = {
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project213);
         activeProjects.splice(index, 1);
-        
+
     }
 }
 
@@ -2314,7 +2320,7 @@ var project214 = {
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project214);
         activeProjects.splice(index, 1);
-        
+
     }
 }
 
@@ -2343,7 +2349,7 @@ var project215 = {
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project215);
         activeProjects.splice(index, 1);
-        
+
     }
 }
 
@@ -2370,7 +2376,7 @@ var project216 = {
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project216);
         activeProjects.splice(index, 1);
-        
+
     }
 }
 

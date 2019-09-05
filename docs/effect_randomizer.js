@@ -7,72 +7,39 @@
 // project201 line 2161 "Universe Within" prestigeS
 //
 // POSSIBLE EFFECTS -----------------------------------------------
-//  qChip deficiency - S - scalable
-//  Decreased Yomi gains - S - scalable
+//  qChip deficiency
+//  Decreased Yomi gains
 //  Creativity Speed
-//  Trust unlock levels - S - scalable
-//  Trust cost for mem/proc upgrades - S - scalable
-//  Operations income - S - scalable
-//  probe trust/macx trust costs - S - scalable
-//  d r i f t - S - scalable
+//  Trust unlock levels
+//  Trust cost for mem/proc upgrades
+//  Operations income
+//  probe trust/macx trust costs
+//  d r i f t
 //  swarm gift period
 //  maxTrustCost
-//
 //  size of batteries
-//  more/less matter - U - scalable
-//  rate of hazards - U - scalable
-//  Milestone Scaling - U - scalable
-//  Marketing Effectiveness - U - scalable
-//  Diminished returns from stocks - U - scalable
+//  more/less matter
+//  rate of hazards
+//  Milestone Scaling
+//  Marketing Effectiveness
+//  Diminished returns from stocks
 // ----------------------------------------------------------------
 //
-// User Prestige's, Prestige >= 10, deffect >= 100%, deffect capped to 90%,
-// random effect from sim/uni effects chosen and added, remove from effect pool,
+// User Prestige's,
+//  Prestige >= 10,
+//  deffect >= 100%,
+//  deffect capped to 90%,
+//  random effect from sim/uni effects chosen and added,
+//  remove from effect pool,
+//
+//  reset
 //
 
-
-
 var randomNum = 0;
-var numEffects = 16;
+var numEffects = 2;
 
 function chooseEffect(t){
-  var n = Math.floor(Math.random()*numEffects); //generate random number
-  if(effects[n].flag){
-    //do stuff
-  } else {
-    //re-roll
-  }
-}
-
-
-var effect1 = {
-    id: "prestigeEffect1",
-    type: 0,  //SIM = 0, UNIVERSE = 1
-    title: "Simulation Deficiency",
-    pricetag: "",
-    description: "test SIM mod",
-    trigger: function(){return project201.flag == 1},
-    uses: 0,
-    cost: function(){return operations>=1},
-    flag: 0,
-    effect: function(){
-      if(effect1.flag==0 && effect1.uses<=0){
-        displayMessage("Test effect");
-
-        //enact changes
-
-
-        //remove element
-        var element = document.getElementById("prestigeEffect1");
-        element.parentNode.removeChild(element);
-        var index = activeProjects.indexOf(effect1);
-        activeProjects.splice(index, 1);
-
-        //adjust flags
-        effect1.uses = (effect1.uses + 1);
-        effect1.flag = 1;
-      }
+  var i = Math.floor(Math.random()*numEffects); //generate random number
+    effects[i].flag = 1;
+    effects[i].uses = effects[i].uses + 1;
     }
-}
-
-projects.push(effect1);
