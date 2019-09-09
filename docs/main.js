@@ -1228,7 +1228,6 @@ function whatBeatsLast(myPos){
 
     }
 
-
 function pickStrats(roundNum) {
     if (roundNum < strats.length) {
         h = 0;
