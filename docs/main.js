@@ -1,4 +1,4 @@
-// Threnody ---------------------------------------------------------
+//--//-- Threnody --------------------------------------------------------------
 
 function threnodyLoaded()
 {
@@ -17,8 +17,8 @@ function playThrenody(){
     }
 }
 
-
-// Wire --------------------------------------------------------
+//----//
+//--//-- Wire ------------------------------------------------------------------
 
 function adjustWirePrice(){
 
@@ -58,8 +58,8 @@ function buyWire(){
         document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
     }
 }
-
-// QCHIPS -----------------------------------------------------------
+//----//
+//--//-- QCHIPS ----------------------------------------------------------------
 
 var qChips = [];
 
@@ -181,8 +181,8 @@ function qComp(){
     }
 
 }
-
-
+//----//
+//--//-- PROJECTS --------------------------------------------------------------
 function manageProjects(){
 
     for(var i = 0; i < projects.length; i++){
@@ -234,8 +234,8 @@ function displayProjects(project){
     blink(project.id);
 
 }
-
-//  HYPNODRONE EVENT ----------------------------------------------------------------
+//----//
+//--//-- HYPNODRONE EVENT ------------------------------------------------------
 
 document.getElementById("hypnoDroneEventDiv").style.display = "none";
 longBlinkCounter = 0;
@@ -287,8 +287,8 @@ function hypnoDroneEvent(){
     longBlink("hypnoDroneEventDiv");
 }
 
-
-//  MESSAGES ------------------------------------------------------------------------
+//----//
+//--//-- MESSAGES --------------------------------------------------------------
 
 
 function displayMessage(msg){
@@ -299,8 +299,8 @@ function displayMessage(msg){
     document.getElementById("readout1").innerHTML=msg;
 }
 
-
-// BLINK
+//----//
+//--//-- BLINK -----------------------------------------------------------------
 
 function blink(elemID){
     var e = document.getElementById(elemID);
@@ -734,8 +734,8 @@ if (probeCombat < 1) {document.getElementById("btnLowerProbeCombat").disabled = 
 
 
 
-
-//----------INVESTMENTS----------------------------------------------------------------
+//----//
+//--//-- INVESTMENTS------------------------------------------------------------
 
 
 var stocks = [];
@@ -997,8 +997,8 @@ if (portfolioSize>0 && humanFlag == 1){
     }
 
 }, 2500);
-
-//-------------------STRATEGY-----------------------------------------------------
+//----//
+//--//-- STRATEGY---------------------------------------------------------------
 
 var tourneyCost = 1000;
 var tourneyLvl = 1;
@@ -1623,9 +1623,8 @@ pick = document.getElementById("stratPicker").value;
 }, 100);
 
 
-//--------------------------------------------------------------------------------
-
-
+//----//----------------------------------------------------------------------------
+//--//-- CLIPS -----------------------------------------------------------------
 function clipClick(number){
 
     if (dismantle>=4){
@@ -1925,8 +1924,8 @@ function factoryReboot(){
     factoryCost = 100000000;
     document.getElementById('factoryCostDisplay').innerHTML = numberCruncher(factoryCost);
 }
-
-// SWARM
+//----//
+//--//-- SWARM -----------------------------------------------------------------
 
 var giftBits = 0;
 var giftBitGenerationRate = 0;
@@ -2138,8 +2137,8 @@ function entertainSwarm(){
         boredomMsg = 0;
 
 }
-
-// POWER
+//----//
+//--//-- POWER -----------------------------------------------------------------
 
 var p10f = 0;
 var p100f = 0;
@@ -2353,9 +2352,8 @@ function updatePower(){
             }
 
 }
-
-
-
+//----//
+//--//-- COSTS & INCOME --------------------------------------------------------
 function buyAds(){
     if(funds >= adCost){
         marketingLvl = marketingLvl +1;
@@ -2550,7 +2548,8 @@ function resetPrestige(){
     localStorage.removeItem("savePrestige");
 
 }
-
+//----//
+//--//-- CHEATS ----------------------------------------------------------------
 function cheatPrestigeU(){
 
         prestigeU++;
@@ -2619,8 +2618,8 @@ function zeroMatter(){
     availableMatter = 0;
     displayMessage("you just cheated");
     }
-
-
+//----//
+//--//-- CALULATIONS -----------------------------------------------------------
 function calculateTrust(){
     if (clips>(nextTrust-1)){
         trust = trust +1;
@@ -2645,7 +2644,6 @@ function addProc(){
         }
 
 }
-
 function addMem(){
         displayMessage("Memory added, max operations increased");
         memory=memory+1;
@@ -2696,7 +2694,6 @@ function calculateOperations(){
         }
 
 }
-
 
 function milestoneCheck(){
 
@@ -2867,9 +2864,8 @@ function numberCruncher(number, decimals){
     }
     return number.toFixed(precision) + " " + suffix;
 }
-
-
-// PROBES
+//----//
+//--//-- PROBES ----------------------------------------------------------------
 
 var probeSpeed = 0;
 var probeNav = 0;
@@ -3154,11 +3150,8 @@ function war(){
 //  battleCleanUp();
 
 }
-
-
-
-
-// DRONES
+//----//
+//--//-- DRONES ----------------------------------------------------------------
 
 function acquireMatter(){
     if (availableMatter>0) {
@@ -3225,9 +3218,9 @@ function processMatter(){
 
 
     }
+//----//
 
-
-// CHECK FOR SAVES
+//--//-- CHECK FOR SAVES -------------------------------------------------------
 
 if (localStorage.getItem("saveGame") != null) {
     load();
@@ -3238,123 +3231,123 @@ if (localStorage.getItem("savePrestige") != null) {
     refresh();
 }
 
-
-// MAIN LOOP
+//----//
+//--//-- MAIN LOOP -------------------------------------------------------------
 
 window.setInterval(function(){
 
-    ticks = ticks + 1;
-    milestoneCheck();
-    buttonUpdate();
+  ticks = ticks + 1;
+  milestoneCheck();
+  buttonUpdate();
 
-    if (compFlag == 1){
-        calculateOperations();
-    }
+  if (compFlag == 1){
+      calculateOperations();
+  }
 
-    if (humanFlag == 1){
-        calculateTrust();
-    }
+  if (humanFlag == 1){
+      calculateTrust();
+  }
 
-    if (qFlag == 1){
-        quantumCompute();
-    }
+  if (qFlag == 1){
+      quantumCompute();
+  }
 
-    updateStats();
-    manageProjects();
-    milestoneCheck();
+  updateStats();
+  manageProjects();
+  milestoneCheck();
 
 
 // Clip Rate Tracker
 
-    clipRateTracker++;
+  clipRateTracker++;
 
-    if (clipRateTracker<100){
-        var cr = clips - prevClips;
-        clipRateTemp = clipRateTemp+cr;
-        prevClips = clips;
+  if (clipRateTracker<100){
+      var cr = clips - prevClips;
+      clipRateTemp = clipRateTemp+cr;
+      prevClips = clips;
 
-    } else {
-        clipRateTracker = 0;
-        clipRate = clipRateTemp;
-        clipRateTemp = 0;
-    }
+  } else {
+      clipRateTracker = 0;
+      clipRate = clipRateTemp;
+      clipRateTemp = 0;
+  }
 
 
 // Stock Report
 
-    stockReportCounter++;
-    if (investmentEngineFlag==1 && stockReportCounter>=10000){
-        var r = (ledger+portTotal).toLocaleString();
-        displayMessage("Lifetime investment revenue report: $"+r);
-        stockReportCounter = 0;
-    }
+  stockReportCounter++;
+  if (investmentEngineFlag==1 && stockReportCounter>=10000){
+      var r = (ledger+portTotal).toLocaleString();
+      displayMessage("Lifetime investment revenue report: $"+r);
+      stockReportCounter = 0;
+  }
 
 // WireBuyer
 
-    if (wireBuyerFlag==1 && wireBuyerStatus==1 && wire<=1){
-        buyWire();
-    }
+  if (wireBuyerFlag==1 && wireBuyerStatus==1 && wire<=1){
+      buyWire();
+  }
 
 
 
 // First, Explore
 
-exploreUniverse();
+  exploreUniverse();
 
-// Then, Drones
+  // Then, Drones
 
-if (humanFlag==0 && spaceFlag == 0){
+  if (humanFlag==0 && spaceFlag == 0){
     updateDroneButtons();
-    }
+  }
 
 
-updatePower();
-updateSwarm();
-acquireMatter();
-processMatter();
+  updatePower();
+  updateSwarm();
+  acquireMatter();
+  processMatter();
 
-// Then Factories
+  // Then Factories
 
-var fbst = 1;
+  var fbst = 1;
 
-if (factoryBoost > 1){
+  if (factoryBoost > 1){
     fbst = factoryBoost * factoryLevel;
-    }
+  }
 
 
-if (dismantle<4){
+  if (dismantle<4){
     clipClick(powMod*fbst*(Math.floor(factoryLevel)*factoryRate));
-    }
-// Then Other Probe Functions
+  }
 
-if (spaceFlag == 1) {
+  // Then Other Probe Functions
 
-if (probeCount<0){
-    probeCount = 0;
-}
+  if (spaceFlag == 1) {
 
-encounterHazards();
-spawnFactories();
-spawnHarvesters();
-spawnWireDrones();
-spawnProbes();
-drift();
-war();
+  if (probeCount<0){
+      probeCount = 0;
+  }
 
-}
+  encounterHazards();
+  spawnFactories();
+  spawnHarvesters();
+  spawnWireDrones();
+  spawnProbes();
+  drift();
+  war();
 
-// Auto-Clipper
+  }
 
-if (dismantle<4){
+  // Auto-Clipper
+
+  if (dismantle<4){
     clipClick(clipperBoost*(clipmakerLevel/100));
     clipClick(megaClipperBoost*(megaClipperLevel*5));
-    }
-
-// Demand Curve
+  }
 
 
-    if (humanFlag == 1) {
+  // Demand Curve
 
+  if (humanFlag == 1) {
     marketing = (Math.pow(1.1,(marketingLvl-1)));
     demand = (((.8/margin) * marketing * marketingEffectiveness)*demandBoost);
     if(prestigeU<10){
@@ -3362,254 +3355,247 @@ if (dismantle<4){
     } else {  //prestigeU >= 10
       demand = demand - ((demand/10)*9)
     }
+  }
 
+  // Creativity
 
-    }
-
-// Creativity
-
-    if (creativityOn && operations >= (memory*1000)){
+  if (creativityOn && operations >= (memory*1000)){
     calculateCreativity();
-    }
+  }
 
-// Ending
-
-    if (dismantle >= 1){
-
+//--//-- Ending ----------------------------------------------------------------
+  if (dismantle >= 1){
     document.getElementById("probeDesignDiv").style.display="none";
     if (endTimer1>=50) {
-        document.getElementById("increaseProbeTrustDiv").style.display="none";
-        }
+      document.getElementById("increaseProbeTrustDiv").style.display="none";
+    }
 
     if (endTimer1>=100) {
-        document.getElementById("increaseMaxTrustDiv").style.display="none";
-        }
+      document.getElementById("increaseMaxTrustDiv").style.display="none";
+    }
 
     if (endTimer1>=150) {
-        document.getElementById("spaceDiv").style.display="none";
-        }
-
+      document.getElementById("spaceDiv").style.display="none";
+    }
 
     if (endTimer1>=175) {
-        document.getElementById("battleCanvasDiv").style.display="none";
-        }
+      document.getElementById("battleCanvasDiv").style.display="none";
+    }
 
     if (endTimer1>=190) {
-        document.getElementById("honorDiv").style.display="none";
-        }
-
+      document.getElementById("honorDiv").style.display="none";
     }
+  }
 
-if (dismantle >= 2){
+  if (dismantle >= 2){
 
-    document.getElementById("wireProductionDiv").style.display="none";
-    document.getElementById("wireTransDiv").style.display="";
+      document.getElementById("wireProductionDiv").style.display="none";
+      document.getElementById("wireTransDiv").style.display="";
 
-    if (endTimer2 >= 50) {
-    document.getElementById("swarmGiftDiv").style.display="none";
-        }
+      if (endTimer2 >= 50) {
+      document.getElementById("swarmGiftDiv").style.display="none";
+          }
 
-    if (endTimer2 >= 100) {
-    document.getElementById("swarmEngine").style.display="none";
-        }
+      if (endTimer2 >= 100) {
+      document.getElementById("swarmEngine").style.display="none";
+          }
 
-    if (endTimer2 >= 150) {
-    document.getElementById("swarmSliderDiv").style.display="none";
-        }
+      if (endTimer2 >= 150) {
+      document.getElementById("swarmSliderDiv").style.display="none";
+          }
 
-    }
+      }
 
-if (dismantle >= 3) {
-    document.getElementById("factoryDivSpace").style.display="none";
-    document.getElementById("clipsPerSecDiv").style.display="none";
-    document.getElementById("tothDiv").style.display="none";
+  if (dismantle >= 3) {
+      document.getElementById("factoryDivSpace").style.display="none";
+      document.getElementById("clipsPerSecDiv").style.display="none";
+      document.getElementById("tothDiv").style.display="none";
 
-}
+  }
 
-if (dismantle >= 4) {
-   document.getElementById("strategyEngine").style.display="none";
-   document.getElementById("tournamentManagement").style.display="none";
-}
+  if (dismantle >= 4) {
+     document.getElementById("strategyEngine").style.display="none";
+     document.getElementById("tournamentManagement").style.display="none";
+  }
 
-if (dismantle >= 5) {
+  if (dismantle >= 5) {
 
-    document.getElementById("btnQcompute").style.display="none";
+      document.getElementById("btnQcompute").style.display="none";
 
-   for (var i = 0; i<qChips.length; i++){
-        qChips[i].value = .5;
-        document.getElementById("qChip"+i).style.opacity=qChips[i].value;
-        }
+     for (var i = 0; i<qChips.length; i++){
+          qChips[i].value = .5;
+          document.getElementById("qChip"+i).style.opacity=qChips[i].value;
+          }
 
-    if (endTimer4==10){
-        wire = wire+1;
-        document.getElementById("transWire").innerHTML=wire;
-    }
+      if (endTimer4==10){
+          wire = wire+1;
+          document.getElementById("transWire").innerHTML=wire;
+      }
 
-    if (endTimer4>=10){
-        document.getElementById("qChip9").style.display="none";
-    }
+      if (endTimer4>=10){
+          document.getElementById("qChip9").style.display="none";
+      }
 
-    if (endTimer4==60){
-        wire = wire+1;
-        document.getElementById("transWire").innerHTML=wire;
-    }
+      if (endTimer4==60){
+          wire = wire+1;
+          document.getElementById("transWire").innerHTML=wire;
+      }
 
-    if (endTimer4>=60){
-        document.getElementById("qChip8").style.display="none";
-    }
+      if (endTimer4>=60){
+          document.getElementById("qChip8").style.display="none";
+      }
 
-    if (endTimer4==100){
-        wire = wire+1;
-        document.getElementById("transWire").innerHTML=wire;
-    }
+      if (endTimer4==100){
+          wire = wire+1;
+          document.getElementById("transWire").innerHTML=wire;
+      }
 
-    if (endTimer4>=100){
-        document.getElementById("qChip7").style.display="none";
-    }
+      if (endTimer4>=100){
+          document.getElementById("qChip7").style.display="none";
+      }
 
-    if (endTimer4==130){
-        wire = wire+1;
-        document.getElementById("transWire").innerHTML=wire;
-    }
+      if (endTimer4==130){
+          wire = wire+1;
+          document.getElementById("transWire").innerHTML=wire;
+      }
 
-    if (endTimer4>=130){
-        document.getElementById("qChip6").style.display="none";
-    }
+      if (endTimer4>=130){
+          document.getElementById("qChip6").style.display="none";
+      }
 
-    if (endTimer4==150){
-        wire = wire+1;
-        document.getElementById("transWire").innerHTML=wire;
-    }
+      if (endTimer4==150){
+          wire = wire+1;
+          document.getElementById("transWire").innerHTML=wire;
+      }
 
-    if (endTimer4>=150){
-        document.getElementById("qChip5").style.display="none";
-    }
+      if (endTimer4>=150){
+          document.getElementById("qChip5").style.display="none";
+      }
 
-    if (endTimer4==160){
-        wire = wire+1;
-        document.getElementById("transWire").innerHTML=wire;
-    }
+      if (endTimer4==160){
+          wire = wire+1;
+          document.getElementById("transWire").innerHTML=wire;
+      }
 
-    if (endTimer4>=160){
-        document.getElementById("qChip4").style.display="none";
-    }
+      if (endTimer4>=160){
+          document.getElementById("qChip4").style.display="none";
+      }
 
-    if (endTimer4==165){
-        wire = wire+1;
-    }
+      if (endTimer4==165){
+          wire = wire+1;
+      }
 
-    if (endTimer4>=165){
-        document.getElementById("qChip3").style.display="none";
-    }
+      if (endTimer4>=165){
+          document.getElementById("qChip3").style.display="none";
+      }
 
-    if (endTimer4==169){
-        wire = wire+1;
-        document.getElementById("transWire").innerHTML=wire;
-    }
+      if (endTimer4==169){
+          wire = wire+1;
+          document.getElementById("transWire").innerHTML=wire;
+      }
 
-    if (endTimer4>=169){
-        document.getElementById("qChip2").style.display="none";
-    }
+      if (endTimer4>=169){
+          document.getElementById("qChip2").style.display="none";
+      }
 
-    if (endTimer4==172){
-        wire = wire+1;
-        document.getElementById("transWire").innerHTML=wire;
-    }
+      if (endTimer4==172){
+          wire = wire+1;
+          document.getElementById("transWire").innerHTML=wire;
+      }
 
-    if (endTimer4>=172){
-        document.getElementById("qChip1").style.display="none";
-    }
+      if (endTimer4>=172){
+          document.getElementById("qChip1").style.display="none";
+      }
 
-    if (endTimer4==174){
-        wire = wire+1;
-        document.getElementById("transWire").innerHTML=wire;
-    }
+      if (endTimer4==174){
+          wire = wire+1;
+          document.getElementById("transWire").innerHTML=wire;
+      }
 
-    if (endTimer4>=174){
-        document.getElementById("qChip0").style.display="none";
-    }
+      if (endTimer4>=174){
+          document.getElementById("qChip0").style.display="none";
+      }
 
-    if (endTimer4>=250){
-        document.getElementById("qComputing").style.display="none";
-    }
+      if (endTimer4>=250){
+          document.getElementById("qComputing").style.display="none";
+      }
 
-}
+  }
 
-if (dismantle >= 6) {
-    document.getElementById("processorDisplay").style.display="none";
-    }
+  if (dismantle >= 6) {
+      document.getElementById("processorDisplay").style.display="none";
+      }
 
-if (dismantle >= 7) {
-    document.getElementById("compDiv").style.display="none";
-    document.getElementById("projectsDiv").style.display="none";
+  if (dismantle >= 7) {
+      document.getElementById("compDiv").style.display="none";
+      document.getElementById("projectsDiv").style.display="none";
 
-    }
+      }
 
-    if (project148.flag == 1){
-        endTimer1++;
-        }
+      if (project148.flag == 1){
+          endTimer1++;
+          }
 
-    if (project211.flag == 1){
-        endTimer2++;
-        }
+      if (project211.flag == 1){
+          endTimer2++;
+          }
 
-    if (project212.flag == 1){
-        endTimer3++;
-        }
+      if (project212.flag == 1){
+          endTimer3++;
+          }
 
-    if (project213.flag == 1){
-        endTimer4++;
-        }
+      if (project213.flag == 1){
+          endTimer4++;
+          }
 
-    if (project215.flag == 1){
-        endTimer5++;
-        }
+      if (project215.flag == 1){
+          endTimer5++;
+          }
 
-    if (project216.flag == 1 && wire == 0){
-        endTimer6++;
-    }
+      if (project216.flag == 1 && wire == 0){
+          endTimer6++;
+      }
 
-    if (endTimer6>=250) {
-        document.getElementById("creationDiv").style.display="none";
-    }
+      if (endTimer6>=250) {
+          document.getElementById("creationDiv").style.display="none";
+      }
 
-    if (endTimer6>=500 && milestoneFlag == 15) {
-        playThrenody();
-        displayMessage("Universal Paperclips");
-        milestoneFlag++;
-    }
+      if (endTimer6>=500 && milestoneFlag == 15) {
+          playThrenody();
+          displayMessage("Universal Paperclips");
+          milestoneFlag++;
+      }
 
-    if (endTimer6>=600 && milestoneFlag == 16) {
-        displayMessage("a game by Frank Lantz");
-        milestoneFlag++;
-    }
+      if (endTimer6>=600 && milestoneFlag == 16) {
+          displayMessage("a game by Frank Lantz");
+          milestoneFlag++;
+      }
 
-    if (endTimer6>=700 && milestoneFlag == 17) {
-        displayMessage("combat programming by Bennett Foddy");
-        milestoneFlag++;
-    }
+      if (endTimer6>=700 && milestoneFlag == 17) {
+          displayMessage("combat programming by Bennett Foddy");
+          milestoneFlag++;
+      }
 
-    if (endTimer6>=800 && milestoneFlag == 18) {
-        displayMessage("'Riversong' by Tonto's Expanding Headband used by kind permission of Malcolm Cecil");
-        milestoneFlag++;
-    }
+      if (endTimer6>=800 && milestoneFlag == 18) {
+          displayMessage("'Riversong' by Tonto's Expanding Headband used by kind permission of Malcolm Cecil");
+          milestoneFlag++;
+      }
 
-    if (endTimer6>=900 && milestoneFlag == 19) {
-        displayMessage("&#169; 2017 Everybody House Games");
-        milestoneFlag++;
-    }
-
-
-
-
+      if (endTimer6>=900 && milestoneFlag == 19) {
+          displayMessage("&#169; 2017 Everybody House Games");
+          milestoneFlag++;
+      }
+  //----//
 
 }, 10);
 
-// Slow Loop
+
+
+//----//
+//--//-- Slow Loop -------------------------------------------------------------
 
 var saveTimer = 0;
 var secTimer = 0;
-
 
 window.setInterval(function(){
 
@@ -3648,8 +3634,8 @@ window.setInterval(function(){
 
 }, 100);
 
-
-// Saving and Loading
+//----//
+//--//-- Saving and Loading ----------------------------------------------------
 
 function refresh() {
 
@@ -4617,6 +4603,7 @@ for(var i=0; i < activeProjects.length; i++){
 
 }
 
+
 function load() {
 
     var loadGame = JSON.parse(localStorage.getItem("saveGame"));
@@ -5536,6 +5523,7 @@ function load2() {
 
 }
 
+
 function reset() {
     localStorage.removeItem("saveGame");
     localStorage.removeItem("saveProjectsUses");
@@ -5552,3 +5540,4 @@ function loadPrestige() {
         prestigeU = loadPrestige.prestigeU;
         prestigeS = loadPrestige.prestigeS;
 }
+//----//

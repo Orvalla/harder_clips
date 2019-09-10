@@ -23,30 +23,44 @@ var numEffects = 2;
 
 var effects = [];
 var activeEffects = [];
-
+var c = 0;
 
 function chooseEffect(){
-  var r = Math.floor(Math.random()*activeEffects.length); //generate random number
-  effects[i].flag = 1;
-  effects[i].uses = effects[i].uses + 1;
+
+  var okay = 0;
+  var r = 0;
+
+  if(c < effects.length){
+    while(!okay){
+      r = Math.floor(Math.random()*effects.length); //generate random number
+      if(effects[r].flag<2){
+        effects[r].flag = 1;
+        effects[r].uses = effects[r].uses + 1;
+        if(effects[r].uses==10){
+          effects[r].flag=2;
+          c++;
+        }
+        okay = 1;
+      }
+    }
+    displayMessage(effects[r].message + (effects[r].uses));
+  }
 }
 
+function manageEffects(){
 
-function manageProjects(){
-
-    for(var i = 0; i < projects.length; i++){
-        if (projects[i].trigger() && (projects[i].uses > 0)){
-            displayProjects(projects[i]);
-            projects[i].uses = projects[i].uses - 1;
-            activeProjects.push(projects[i]);
+    for(var i = 0; i < effects.length; i++){
+        if (effects[i].flag > 0){
+            displayEffects(effects[i]);
+            activeEffects.push(effects[i]);
         }
     }
 
-    for(var i = 0; i < activeProjects.length; i++){
-        if (activeProjects[i].cost()){
-            document.getElementById(activeProjects[i].id).disabled = false;
+    for(var i = 0; i < activeEffects.length; i++){
+        if (activeEffects[i].cost()){
+            document.getElementById(activeEffects[i].id).disabled = false;
         } else {
-            document.getElementById(activeProjects[i].id).disabled = true;
+            document.getElementById(activeEffects[i].id).disabled = true;
         }
     }
 }
@@ -74,13 +88,12 @@ var effect1 = {
     id: "prestigeEffect1",
     title: "Quantum Deficiency" + effect1.uses,
     message: "Delay causes Quantum computation capabilities to be further reduced.",
-    trigger: function(){return project201.flag == 1 && },
     uses: 0,
     flag: 0,
     effect: function(){
       //enact changes
-      for(i = 0 ; i < effect1.uses ; i++){
-        qChips[i].waveSeed = 0
+      for(i = 0 ; i < qChips.length ; i++){
+        qChips[i].waveSeed -= (qChips[i].waveSeed*(effect1.uses*0.1))
       }
     }
 }
@@ -91,23 +104,6 @@ var effect = {
     id: "prestigeEffect",
     title: "" + effect.uses,
     message: "",
-    trigger: function(){return project201.flag == 1 && },
-    uses: 0,
-    flag: 0,
-    effect: function(){
-      if(true){
-        //enact changes
-      }
-    }
-}
-
-effects.push(effect);
-
-var effect = {
-    id: "prestigeEffect",
-    title: "" + effect.uses,
-    message: "",
-    trigger: function(){return project201.flag == 1 && },
     uses: 0,
     flag: 0,
     effect: function(){
